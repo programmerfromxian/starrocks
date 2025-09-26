@@ -229,7 +229,14 @@ public class ConnectProcessor {
                 .setReturnRows(ctx.getReturnRows())
                 .setStmtId(ctx.getStmtId())
                 .setIsForwardToLeader(isForwardToLeader)
+<<<<<<< HEAD
                 .setQueryId(ctx.getQueryId() == null ? "NaN" : ctx.getQueryId().toString());
+=======
+                .setQueryId(ctx.getQueryId() == null ? "NaN" : ctx.getQueryId().toString())
+                .setSessionId(ctx.getSessionId().toString())
+                .setCNGroup(ctx.getCurrentComputeResourceName())
+                .setQuerySource(ctx.getQuerySource().toString());
+>>>>>>> 6e2a6a5fea ([Enhancement] add querySource in the QueryDetail & AuditEvent (#63480))
 
         if (ctx.getState().isQuery()) {
             MetricRepo.COUNTER_QUERY_ALL.increase(1L);
